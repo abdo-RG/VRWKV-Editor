@@ -1,0 +1,93 @@
+<p> 
+      <b>Original Prompt:</b> A rider on a horse jumping over an obstacle in an equestrian competition with a clear sky and other obstacles in the background.
+    </p>
+    <p> 
+    <b>Video Type:</b> Human
+    </p>
+    <p> 
+    <b>Camera Motion:</b> 2
+    </p>
+    <p> 
+    <b>Object Motion:</b> 3
+    </p>
+    <p> 
+      <b>Scene Complexity:</b> 2
+    </p>
+    <br>
+    <p> 
+      <b>Target Prompt:</b> A rider on a horse jumping over an obstacle in an equestrian competition, rendered in Van Gogh style with swirling skies and vibrant colors.
+    </p>
+    <p> 
+      <b>Editing Type:</b> Style Change
+    </p>
+    <p> 
+      <b>Fantasy Level:</b> 1
+    </p>
+    <table class="center">
+      <tr>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/yachtbmx-bumps/yachtbmx-bumps.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/yachtbmx-bumps/controlvideo.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/yachtbmx-bumps/fatezero.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/yachtbmx-bumps/pix2video.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/yachtbmx-bumps/rerenderavideo.mp4"></video>
+        </td>
+      </tr>
+    </table>
+    <center>
+      <table class="center">
+        <tr>
+          <td width=20.0% style="text-align:center;">Input Video</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">ControlVideo</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">FateZero</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">Pix2Viode</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">Rerender A Video</td>
+        </tr>
+      </table>
+    </center>
+    <table class="center">
+      <tr>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/yachtbmx-bumps/text2videozero.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/yachtbmx-bumps/tokenflow.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/yachtbmx-bumps/tuneavideo.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/yachtbmx-bumps/vid2vidzero.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/yachtbmx-bumps/ours-vi2v.mp4"></video>
+        </td>
+      </tr>
+    </table>
+    <center>
+      <table class="center">
+        <tr>
+          <td width=20.0% style="text-align:center;">Text2Video-Zero</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">TokenFlow</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">Tune-A-Video</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">vid2vid-zero</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">CCEdit (Ours)</td>
+        </tr>
+      </table>
+    </center>

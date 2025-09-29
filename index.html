@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Swin-Editor</title>
+
+  <script type="module"
+          src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script src="https://unpkg.com/interactjs/dist/interact.min.js"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="./static/slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="./static/slick/slick-theme.css"/>
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+</nav>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="container has-text-centered">
+          <h1 class="title is-1 publication-title">
+            Swin-Editor: 
+          </h1>
+          <h3 class="title is-3 publication-title">
+            Enhancing Creativity and Maintaining Consistency in Text-Driven Video Editing
+          </h3>
+          <!-- 作者、机构和共同一标识 
+          <div class="is-size-5 publication-authors">
+            <p>
+              <div style="text-align: center; font-weight: bold; font-size: 24px;">
+                
+              </div>              
+              <br>
+              <span class="author">Abdelilah Aitrouga<sup>1,*</sup></span>, 
+              <span class="author">Youssef Hmamouche<sup>1</sup></span>, 
+              <span class="author">Amal El Fallah Saghrouchni<sup>1,2</sup></span>,
+            </p>
+          </div>          
+          <div class="is-size-5 publication-authors">
+            <p><sup>1</sup>Ai movement - Inernational Artificial Itelligence Center of Morocco <br><sup>2</sup>Sorbonne Universite, LIP6 - UMR 7606 CNRS, France<sup></p>
+          </div> -->
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- Github Link. -->
+              <span class="link-block">
+                <a href="https://github.com/Swin-Editor"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Github</span>
+                  </a>
+              </span>
+              <!-- Arxiv Link. 
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2309.16496"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>-->
+
+              <!-- Video Link. 
+              <span class="link-block">
+                <a href="https://www.youtube.com/watch?v=UQw4jq-igN4"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="column is-six-fifths">
+        <table style="width: 100%; text-align: center;">
+          <tr>
+            <td style="padding-right: 15px;">
+              <video muted autoplay="autoplay" loop="loop" src="assets/VideoResults/Interpolation/yacht3.mp4"></video>
+            </td>
+            <td style="padding-right: 15px;">
+              <video muted autoplay="autoplay" loop="loop" src="assets/VideoResults/Interpolation/yacht-cruise ship.mp4"></video>
+            </td>
+            <td style="padding-right: 15px;">
+              <video muted autoplay="autoplay" loop="loop" src="assets/VideoResults/Interpolation/eiffel-flyover.mp4"></video>
+            </td>
+            <td>
+              <video muted autoplay="autoplay" loop="loop" src="assets/VideoResults/Interpolation/flyover-needlespace.mp4"></video>
+            </td>
+          </tr>
+        </table>
+      </div>
+      
+      <!-- <br> -->
+    
+      <br>
+
+      <div class="columns is-centered has-text-centered">
+      <h2 class="subtitle has-text-justified">
+        <b>Swin-Editor </b> leverages natural language instructions to modify, enhance, or transform video content by fine-tuning a pre-trained text-to-image diffusion model for text-to-video generation.
+
+      </h2>
+    </div>
+  </div>
+
+</section>
+
+<!-- <section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-2, columns is-centered">Video</h2>
+      <div class="publication-video">
+          <iframe width="320" height="256" src="https://www.youtube.com/embed/UQw4jq-igN4?si=00dYistYJZUWLRUs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+  </div>
+</section> -->
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Large visual models have recently made considerable
+            progress in Text-to-Video generation thanks to the development of foundation models and multi-modal alignment
+            techniques, making video generation more and more realistic. Current approaches predominantly rely on adapting
+            image-based diffusion models via spatiotemporal attention,
+            but this generally leads to temporal inconsistency and increasing model complexity. This inconsistency is mainly related to the fact those approaches are founded on models
+            that were originally designed for image generation, thus,
+            they do not consider implicitly the spatiotemporal aspect of
+            videos. 
+            <p>In this article, we introduce Swin-Editor, an efficient
+            approach of video editing from text-instruction that expands
+            a diffusion-based Text-to-Image model into Text-to-Video.</p>
+            <p>
+            Specifically, our focus lies in enhancing the visual quality of the generated videos by incorporating a spatiotemporally factorized video prediction 
+            mechanism in the diffusion model. Additionally, to reduce computational complexity and memory requirements, the proposed model includes
+            a Vector Quantized Variational Autoencoders module, intended to quantize and compress the spatiotemporal latent
+            features. The proposed architecture produces a good compromise between multiple evaluation metrics against state-of-the-art models in various scenarios.</p>
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-2 columns is-centered">Approach</h2>
+    <!-- Insert Image Here -->
+    <div class="columns is-centered">
+      <div class="column">
+        <figure class="image">
+          <img src="assets/Approach/Overview (4)-1.png" alt="Approach">
+        </figure>
+      
+      <!-- <br> -->
+
+      <p>
+        <br>
+        <b>Pipeline of Swin-Editor.</b> 
+        Given a text-video pair (e.g., “kite-surfer in the ocean”) as input, our method leverages the pretrained
+        T2I diffusion models for T2V generation by encoding the input video into a discrete space, then we predict the added noise using our U-net
+        architecture. During inference, we sample a novel video from the discrete noise inverted from the input video, guided by an
+        edited prompt (e.g., “kite-surfer in the ocean at sunset”).
+
+
+        <br>
+        <br>
+
+        For the subsequent results, we showcase some demos of our framework in various scenarios such as Foreground, Background, Style and Global Editing.
+      </p>
+    </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <hr>
+    <center>
+      <h2 class="title is-5"><b style="color:#008AD7; font-weight:normal"> </b> 🌟 Foreground Transfer 🌟 </h2>
+    </center>
+    <br>
+    <p>
+      <b>Foreground editing</b> enables customized foreground object change.
+    </p>
+    
+    <br>
+    <table class="center">
+      <tr>
+        <td>
+          <div class="videoContainer">
+            <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Foreground/wolf-dogold.mp4"></video>
+          </div>
+        </td>
+      </tr>
+    </table>
+    <center>
+      <table class="center">
+        <tr>
+          <td width=50.0% style="text-align:center;">Input Video</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=50.0% style="text-align:center;font-family:'Papyrus',serif">"A golden retriever stands alert in a forested area, its gaze fixed intently ahead."</td>
+        </tr>
+      </table>
+    </center>
+    <table class="center">
+      <tr>
+        <td>
+          <div class="videoContainer">
+            <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Foreground/Drones.mp4"></video>
+          </div>
+        </td>
+      </tr>
+    </table>
+    <center>
+      <table class="center">
+        <tr>
+          <td width=50.0% style="text-align:center;">Input Video</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=50.0% style="text-align:center;font-family:'Papyrus',serif">"Two quadrotor drones swim in the blue ocean on a coral reef."</td>
+        </tr>
+      </table>
+    </center>
+
+    <table class="center">
+      <tr>
+        <td>
+          <div class="videoContainer">
+            <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets\Foreground\eifle-canadiantower.mp4"></video>
+          </div>
+        </td>
+      </tr>
+    </table>
+    <center>
+      <table class="center">
+        <tr>
+          <td width=50.0% style="text-align:center;">Input Video</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=50.0% style="text-align:center;font-family:'Papyrus',serif">"Drone flyover of the Canadian National Tower."</td>
+        </tr>
+      </table>
+    </center>
+
+    <table class="center">
+      <tr>
+        <td>
+          <div class="videoContainer">
+            <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Foreground/dog on the sun.mp4"></video>
+          </div>
+        </td>
+      </tr>
+    </table>
+    <center>
+      <table class="center">
+        <tr>
+          <td width=50.0% style="text-align:center;">Input Video</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=50.0% style="text-align:center;font-family:'Papyrus',serif">"A dog in the grass under the sun."</td>
+        </tr>
+      </table>
+    </center>
+    <table class="center">
+      <tr>
+        <td style="padding-right: 15px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Foreground/laugh-woman.mp4"></video>
+
+        </td>
+        <td>
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Foreground/motorbike-spiderman.mp4"></video>
+        </td>
+      </tr>
+    </table>
+    <center>
+      <table class="center">
+        <tr>
+          <td width=25.0% style="text-align:center;">Input Video</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=25.0% style="text-align:center;font-family:'Papyrus',serif">"A white woman is laughing."</td>
+          <td width=25.0% style="text-align:center;">Input Video</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=25.0% style="text-align:center;font-family:'Papyrus',serif">"Spider-Man is driving speedly a motorbike in the forest."</td>
+        </tr>
+      </table>
+    </center>
+
+    <table class="center">
+      <tr>
+        <td style="padding-right: 15px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Foreground/americanflag-canadian.mp4"></video>
+
+        </td>
+        <td>
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Foreground/gish-sharks.mp4"></video>
+        </td>
+      </tr>
+    </table>
+    <center>
+      <table class="center">
+        <tr>
+          <td width=25.0% style="text-align:center;">Input Video</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=25.0% style="text-align:center;font-family:'Papyrus',serif">"The Canadian flag on a flagpole moves in the wind."</td>
+          <td width=25.0% style="text-align:center;">Input Video</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=25.0% style="text-align:center;font-family:'Papyrus',serif">"Several sharks swim in a tank."</td>
+        </tr>
+      </table>
+    </center>
+
+    <hr>
+    <center>
+      <h2 class="title is-5"><b style="color:#008AD7; font-weight:normal"> </b> 🌟 Background Editing 🌟 </h2>
+    </center>
+    <br>
+    <p>
+      <b>Background editing</b> enables customized background editing and replacement.
+    </p>
+    <br>
+
+    <table class="center">
+      <tr>
+        <td>
+          <div class="videoContainer">
+            <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Background/aircraft-grayscale.mp4"></video>
+          </div>
+        </td>
+      </tr>
+    </table>
+    <center>
+      <table class="center">
+        <tr>
+          <td width=50.0% style="text-align:center;">Input Video</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=50.0% style="text-align:center;font-family:'Papyrus',serif">"An aircraft carrier at the dock with planes on its deck, presented in a grayscale wartime documentary style."</td>
+        </tr>
+      </table>
+    </center>
+
+  
+    <table class="center">
+      <tr>
+        <td>
+          <div class="videoContainer">
+            <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Background/car turn in the snow.mp4"></video>
+          </div>
+        </td>
+      </tr>
+    </table>
+    <center>
+      <table class="center">
+        <tr>
+          <td width=50.0% style="text-align:center;">Input Video</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=50.0% style="text-align:center;font-family:'Papyrus',serif">"Jeep car turn in the snow."</td>
+        </tr>
+      </table>
+    </center>
+
+    <table class="center">
+      <tr>
+        <td>
+          <div class="videoContainer">
+            <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Background/lotus-NYC.mp4"></video>
+          </div>
+        </td>
+      </tr>
+    </table>
+    <center>
+      <table class="center">
+        <tr>
+          <td width=50.0% style="text-align:center;">Input Video</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=50.0% style="text-align:center;font-family:'Papyrus',serif">"A beautiful lotus with New York City in the background."</td>
+        </tr>
+      </table>
+    </center>
+
+    <table class="center">
+      <tr>
+        <td style="padding-right: 15px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Background/windturbines-sunset.mp4"></video>
+
+        </td>
+        <td>
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Background/boat-mountains.mp4"></video>
+        </td>
+      </tr>
+    </table>
+    <center>
+      <table class="center">
+        <tr>
+          <td width=25.0% style="text-align:center;">Input Video</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=25.0% style="text-align:center;font-family:'Papyrus',serif">"Wind turbines spin during dusk, sunset."</td>
+          <td width=25.0% style="text-align:center;">Input Video</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=25.0% style="text-align:center;font-family:'Papyrus',serif">"A fishing boat sails on the tranquil surface of a moonlit lake, surrounded by towering mountains."</td>
+        </tr>
+      </table>
+    </center>
+
+    <table class="center">
+      <tr>
+        <td style="padding-right: 15px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Background/motorbike-snow.mp4"></video>
+
+        </td>
+        <td>
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Background/hike-moon.mp4"></video>
+        </td>
+      </tr>
+    </table>
+    <center>
+      <table class="center">
+        <tr>
+          <td width=25.0% style="text-align:center;">Input Video</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=25.0% style="text-align:center;font-family:'Papyrus',serif">"a man is driving speedly a motorbike in the snow."</td>
+          <td width=25.0% style="text-align:center;">Input Video</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=25.0% style="text-align:center;font-family:'Papyrus',serif">"A man with a backpack hikes on a lunar surface, surrounded by vast craters and the vastness of space."</td>
+        </tr>
+      </table>
+    </center>
+    <hr>
+    <center>
+      <h2 class="title is-5"><b style="color:#008AD7; font-weight:normal"> </b> 🌟 Style Editing 🌟 </h2>
+    </center>
+    <br>
+    <p>
+      <b>Style editing</b> enables users customizing the structure inheritance from the source video to the target video at different styles.
+    </p>
+    <br>
+
+    <table class="center">
+      <tr>
+        <td style="padding-right: 15px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Style/blackswan-oil painting style.mp4"></video>
+
+        </td>
+        <td>
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Style/yacht-Studiostyle.mp4"></video>
+        </td>
+      </tr>
+    </table>
+    <center>
+      <table class="center">
+        <tr>
+          <td width=25.0% style="text-align:center;">Input Video</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=25.0% style="text-align:center;font-family:'Papyrus',serif">"A black swan swimming in a pond with lush greenery in the background, oil painting style."</td>
+          <td width=25.0% style="text-align:center;">Input Video</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=25.0% style="text-align:center;font-family:'Papyrus',serif">"A cruise ship sailing through the ocean with a city skyline in the background, in Studio Ghibli style."</td>
+        </tr>
+      </table>
+    </center>
+
+    <table class="center">
+      <tr>
+        <td style="padding-right: 15px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Style/swing-Gothicstyle.mp4"></video>
+
+        </td>
+        <td>
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Style/truck-autumn.mp4"></video>
+        </td>
+      </tr>
+    </table>
+    <center>
+      <table class="center">
+        <tr>
+          <td width=25.0% style="text-align:center;">Input Video</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=25.0% style="text-align:center;font-family:'Papyrus',serif">"An empty swing hanging from chains, with fog obscuring trees in the background, Gothic Animation style."</td>
+          <td width=25.0% style="text-align:center;">Input Video</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=25.0% style="text-align:center;font-family:'Papyrus',serif">"Steampunk adventurers traveling in a retro-futuristic vehicle through an autumnal forest."</td>
+        </tr>
+      </table>
+    </center>
+
+    <table class="center">
+      <tr>
+        <td style="padding-right: 15px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Style/car turn in the cartoon style.mp4"></video>
+
+        </td>
+        <td>
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Style/plane-grayscale.mp4"></video>
+        </td>
+      </tr>
+    </table>
+    <center>
+      <table class="center">
+        <tr>
+          <td width=25.0% style="text-align:center;">Input Video</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=25.0% style="text-align:center;font-family:'Papyrus',serif">"a jeep car is moving on the road, cartoon style."</td>
+          <td width=25.0% style="text-align:center;">Input Video</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=25.0% style="text-align:center;font-family:'Papyrus',serif">"A large airplane on a wet runway under a twilight sky, all rendered in a somber grayscale tone."</td>
+        </tr>
+      </table>
+    </center>
+
+    <table class="center">
+      <tr>
+        <td style="padding-right: 15px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Style/corgi-sketchstyle.mp4"></video>
+
+        </td>
+        <td>
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Style/daisy-luminated.mp4"></video>
+        </td>
+      </tr>
+    </table>
+
+    <center>
+      <table class="center">
+        <tr>
+          <td width=25.0% style="text-align:center;">Input Video</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=25.0% style="text-align:center;font-family:'Papyrus',serif">"A playful corgi dog with its mouth open and tongue out, looking excitedly at the camera, rendered in a sketch style."</td>
+          <td width=25.0% style="text-align:center;">Input Video</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=25.0% style="text-align:center;font-family:'Papyrus',serif">"A close-up of exotic, luminous flowers, bioluminescent with hues of neon blue and green."</td>
+        </tr>
+      </table>
+    </center>
+
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <h2 class="title is-2, columns is-centered">Comparison</h2>
+
+    <br>
+    <p>
+      All models employing Stable Diffusion use version 1.4. The default settings provided in their official codebases are used.
+    </p>
+
+    <br>
+    <hr>
+    <p> 
+      <b>Original Prompt:</b> A man with a backpack hikes on a rocky terrain, surrounded by tall, rugged mountains and scattered boulders.
+    </p>
+    <p> 
+      <b>Target Prompt:</b> An astronaut with a jetpack floats above a Martian landscape, with red rocky terrains and tall, alien-like mountains in the backdrop.
+    </p>
+    <table class="center">
+      <tr>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/hike/hike.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/hike/controlvideo.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/hike/fatezero.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/hike/pix2video.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/hike/rerenderavideo.mp4"></video>
+        </td>
+      </tr>
+    </table>
+    <center>
+      <table class="center">
+        <tr>
+          <td width=20.0% style="text-align:center;">Input Video</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">ControlVideo</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">FateZero</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">Pix2Viode</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">Rerender A Video</td>
+        </tr>
+      </table>
+    </center>
+    <table class="center">
+      <tr>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/hike/text2videozero.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/hike/ours-vi2v.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/hike/tuneavideo.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/hike/vid2vidzero.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/hike/hike(ours).mp4"></video>
+        </td>
+      </tr>
+    </table>
+    <center>
+      <table class="center">
+        <tr>
+          <td width=20.0% style="text-align:center;">Text2Video-Zero</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">CCEdit</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">Tune-A-Video</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">vid2vid-zero</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">Swin-Editor (Ours)</td>
+        </tr>
+      </table>
+    </center>
+
+    <hr>
+    <p> 
+      <b>Original Prompt:</b> A rider on a horse jumping over an obstacle in an equestrian competition with a clear sky and other obstacles in the background.
+    </p>
+    <br>
+    <p> 
+      <b>Target Prompt:</b> A rider on a horse jumping over an obstacle in an equestrian competition, rendered in Van Gogh style with swirling skies and vibrant colors.
+    </p>
+    <table class="center">
+      <tr>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/horsejump/horsejump-high.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/horsejump/controlvideo.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/horsejump/fatezero.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/horsejump/pix2video.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/horsejump/rerenderavideo.mp4"></video>
+        </td>
+      </tr>
+    </table>
+    <center>
+      <table class="center">
+        <tr>
+          <td width=20.0% style="text-align:center;">Input Video</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">ControlVideo</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">FateZero</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">Pix2Viode</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">Rerender A Video</td>
+        </tr>
+      </table>
+    </center>
+    <table class="center">
+      <tr>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/horsejump/text2videozero.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/horsejump/ours-vi2v.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/horsejump/tuneavideo.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/horsejump/vid2vidzero.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/horsejump/horsejump(ours).mp4"></video>
+        </td>
+      </tr>
+    </table>
+    <center>
+      <table class="center">
+        <tr>
+          <td width=20.0% style="text-align:center;">Text2Video-Zero</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">CCEdit</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">Tune-A-Video</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">vid2vid-zero</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">Swin-Editor (Ours)</td>
+        </tr>
+      </table>
+    </center>
+
+    <hr>
+    <p> 
+      <b>Original Prompt:</b> A butterfly with black and orange wings perches on a plant amidst a field of golden grass.
+    </p>
+    <br>
+    <p> 
+      <b>Target Prompt:</b> A dragonfly with shimmering wings perches on a plant amidst a field of golden grass.
+    </p>
+
+    <table class="center">
+      <tr>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/butterfly/butterfly.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/butterfly/controlvideo.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/butterfly/fatezero.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/butterfly/pix2video.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/butterfly/rerenderavideo.mp4"></video>
+        </td>
+      </tr>
+    </table>
+    <center>
+      <table class="center">
+        <tr>
+          <td width=20.0% style="text-align:center;">Input Video</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">ControlVideo</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">FateZero</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">Pix2Viode</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">Rerender A Video</td>
+        </tr>
+      </table>
+    </center>
+    <table class="center">
+      <tr>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/butterfly/text2videozero.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/butterfly/ours-vi2v.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/butterfly/tuneavideo.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/butterfly/vid2vidzero.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/butterfly/butterfly(ours).mp4"></video>
+        </td>
+      </tr>
+    </table>
+    <center>
+      <table class="center">
+        <tr>
+          <td width=20.0% style="text-align:center;">Text2Video-Zero</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">CCEdit</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">Tune-A-Video</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">vid2vid-zero</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">Swin-Editor (Ours)</td>
+        </tr>
+      </table>
+    </center>
+
+    <hr>
+    <p> 
+      <b>Original Prompt:</b> Two individuals crossing a street at a railway intersection with buildings in the background.
+    </p>
+
+    <br>
+    <p> 
+      <b>Target Prompt:</b> Two animated characters from a classic video game crossing a pixelated street, with a digitalized cityscape in the background.
+    </p>
+    <table class="center">
+      <tr>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/crossing/crossing.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/crossing/controlvideo.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/crossing/fatezero.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/crossing/pix2video.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/crossing/rerenderavideo.mp4"></video>
+        </td>
+      </tr>
+    </table>
+    <center>
+      <table class="center">
+        <tr>
+          <td width=20.0% style="text-align:center;">Input Video</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">ControlVideo</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">FateZero</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">Pix2Viode</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">Rerender A Video</td>
+        </tr>
+      </table>
+    </center>
+    <table class="center">
+      <tr>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/crossing/text2videozero.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/crossing/ours-vi2v.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/crossing/tuneavideo.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/crossing/vid2vidzero.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/crossing/crossing(ours).mp4"></video>
+        </td>
+      </tr>
+    </table>
+    <center>
+      <table class="center">
+        <tr>
+          <td width=20.0% style="text-align:center;">Text2Video-Zero</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">CCEdit</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">Tune-A-Video</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">vid2vid-zero</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">Swin-Editor (Ours)</td>
+        </tr>
+      </table>
+    </center>
+
+    <hr>
+    <p> 
+      <b>Original Prompt:</b> A close-up of daisies with vibrant yellow centers and white petals.
+    </p>
+    <br>
+    <p> 
+      <b>Target Prompt:</b> A close-up of daisies with vibrant yellow centers and white petals, vibrant strokes of an impressionist painting.
+    </p>
+    <table class="center">
+      <tr>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/daisy/daisy.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/daisy/controlvideo.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/daisy/fatezero.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/daisy/pix2video.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/daisy/rerenderavideo.mp4"></video>
+        </td>
+      </tr>
+    </table>
+    <center>
+      <table class="center">
+        <tr>
+          <td width=20.0% style="text-align:center;">Input Video</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">ControlVideo</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">FateZero</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">Pix2Viode</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">Rerender A Video</td>
+        </tr>
+      </table>
+    </center>
+    <table class="center">
+      <tr>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/daisy/text2videozero.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/daisy/ours-vi2v.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/daisy/tuneavideo.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/daisy/vid2vidzero.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/daisy/daisy(ours).mp4"></video>
+        </td>
+      </tr>
+    </table>
+    <center>
+      <table class="center">
+        <tr>
+          <td width=20.0% style="text-align:center;">Text2Video-Zero</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">CCEdit</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">Tune-A-Video</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">vid2vid-zero</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">Swin-Editor (Ours)</td>
+        </tr>
+      </table>
+    </center>
+    
+    <hr>
+    <p> 
+      <b>Original Prompt:</b> A race car performing a drift turn on a track.
+    </p>
+    <br>
+    <p> 
+      <b>Target Prompt:</b> A race car drifting on a track in a grainy, high-contrast black and white film style.
+    </p>
+    <table class="center">
+      <tr>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/drift-turn/drift-turn.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/drift-turn/controlvideo.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/drift-turn/fatezero.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/drift-turn/pix2video.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/drift-turn/rerenderavideo.mp4"></video>
+        </td>
+      </tr>
+    </table>
+    <center>
+      <table class="center">
+        <tr>
+          <td width=20.0% style="text-align:center;">Input Video</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">ControlVideo</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">FateZero</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">Pix2Viode</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">Rerender A Video</td>
+        </tr>
+      </table>
+    </center>
+    <table class="center">
+      <tr>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/drift-turn/text2videozero.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/drift-turn/ours-vi2v.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/drift-turn/tuneavideo.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/drift-turn/vid2vidzero.mp4"></video>
+        </td>
+        <td style="padding-right: 5px;">
+          <video class="mainVideo" muted autoplay="autoplay" loop="loop" src="assets/Comparison/drift-turn/drift-turn(ours).mp4"></video>
+        </td>
+      </tr>
+    </table>
+    <center>
+      <table class="center">
+        <tr>
+          <td width=20.0% style="text-align:center;">Text2Video-Zero</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">CCEdit</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">Tune-A-Video</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">vid2vid-zero</td>
+          <td style="padding-left: 5px; padding-right: 5px;"></td>
+          <td width=20.0% style="text-align:center;">Swin-Editor (Ours)</td>
+        </tr>
+      </table>
+    </center>
+  </div>
+</section>
+
+<!--<section class="section" id="BibTeX">
+  <div class="container content is-max-desktop">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{Swineditor2024,
+      title={Swin-Editor: Enhancing Creativity and Maintaining Consistency in Text-Driven Video Editing},
+      author={Abdelilah Aitrouga, Youssef Hmamouche, Amal El Fallah Seghrouchni},
+      journal={---},
+      year={2025}
+    }</code></pre>
+  </div>
+</section>-->
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/nerfies_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://github.com/Swin-Editor" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is adapted from <a
+            href="https://github.com/nerfies/nerfies.github.io">source code</a> wich licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<script type="text/javascript" src="./static/slick/slick.min.js"></script>
+</body>
+</html>
+
+<style>
+  .videoContainer {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  .videoContainer video.mainVideo {
+    width: 100%;
+    height: auto;
+  }
+
+  .videoContainer video.overlayVideo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 30%; /* Adjust this value to make video2 smaller or larger */
+  }
+</style>
