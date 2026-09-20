@@ -1,0 +1,24 @@
+output_dir: outputs/improve/man-skiing_linear
+train_data:
+  video_path: data/man-skiing.mp4
+  prompt: "a man is skiing"
+  n_sample_frames: 16
+validation_data:
+  prompts:
+  - "spider man is skiing on the beach, cartoon style"
+  - "a man, wearing pink clothes, is skiing at sunset"
+  video_length: 16
+  frame_rate: 2
+  num_inference_steps: 50
+  guidance_scale: 12.5
+  use_inv_latent: true
+  num_inv_steps: 50
+max_train_steps: 500
+updated_modules:
+- "attn2.to_q"
+- "attn_temp"
+- "swa_attn1"
+checkpointing_steps: 1000
+validation_steps: 500
+spatial_mode: linear_only
+mu_lr_mult: 200.0

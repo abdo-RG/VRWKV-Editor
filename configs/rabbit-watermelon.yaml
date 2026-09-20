@@ -1,0 +1,26 @@
+output_dir: "./outputs/rabbit-watermelon"
+train_data:
+  video_path: "data/rabbit-watermelon.mp4"
+  prompt: "a rabbit is eating a watermelon"
+  n_sample_frames: 16
+
+validation_data:
+  prompts:
+    - "a tiger is eating a watermelon"
+    - "a rabbit is eating an orange"
+    - "a rabbit is eating a pizza"
+    - "a puppy is eating an orange"
+  video_length: 16
+  frame_rate: 2
+  num_inference_steps: 50
+  guidance_scale: 12.5
+  use_inv_latent: true
+  num_inv_steps: 50
+max_train_steps: 500
+updated_modules:
+  - "attn1"
+  - "attn2.to_q"
+  - "attn_temp"
+  - "swa_attn1"
+checkpointing_steps: 1000
+validation_steps: 100

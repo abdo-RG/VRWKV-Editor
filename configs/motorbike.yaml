@@ -1,0 +1,25 @@
+output_dir: "./outputs/motorbike"
+train_data:
+  video_path: "data/motorbike.mp4"
+  prompt: "Two motorcyclists on an orange motorcycle riding on a road with a forest and mountains in the background, beside a potted plant with yellow flowers.."
+  n_sample_frames: 16
+validation_data:
+  prompts:
+  - "Two motorcyclists on an orange motorcycle riding on a road, Photorealistic CGI and Traditional Animation style, with a glowing trail behind them."
+  - "Two astronauts riding a futuristic hoverbike on a road with a forest and mountains in the background."
+  - "Two motorcyclists on an orange motorcycle riding on a road set against the backdrop of a vast, barren landscape on Mars."
+  - "Two riders made of origami on a paper horse, galloping on a road amidst an enchanted forest under a pastel-colored sky."
+  video_length: 16
+  frame_rate: 2
+  num_inference_steps: 50
+  guidance_scale: 12.5
+  use_inv_latent: true
+  num_inv_steps: 50
+max_train_steps: 500
+updated_modules:
+  - "attn1"
+  - "attn2.to_q"
+  - "attn_temp"
+  - "swa_attn1"
+checkpointing_steps: 1000
+validation_steps: 100

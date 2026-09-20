@@ -1,0 +1,27 @@
+output_dir: "./outputs/ice-hokey"
+
+train_data:
+  video_path: "data/ice-hockey.mp4"
+  prompt: "People play hockey on an ice rink."
+  n_sample_frames: 16
+
+validation_data:
+  prompts:
+    - "People play hockey on an ice rink, brightly colored cyberpunk style."
+    - "Cartoon characters play hockey on an ice rink."
+    - "People play broomball on an ice rink, nighttime lighting."
+    - "People play hockey on an ice rink, brightly colored cyberpunk style."
+  video_length: 16
+  frame_rate: 2
+  num_inference_steps: 50
+  guidance_scale: 12.5
+  use_inv_latent: true
+  num_inv_steps: 50
+max_train_steps: 500
+updated_modules:
+  - "attn1"
+  - "attn2.to_q"
+  - "attn_temp"
+  - "swa_attn1"
+checkpointing_steps: 1000
+validation_steps: 100

@@ -1,0 +1,25 @@
+output_dir: "./outputs/comparison/wolf"
+train_data:
+  video_path: "data/wolf.mp4"
+  prompt: "A gray wolf stands alert in a forested area, its gaze fixed intently ahead."
+  n_sample_frames: 16
+validation_data:
+  prompts:
+  - "A gray wolf stands alert in a forested area, its gaze fixed intently ahead, rendered in Van Gogh style."
+  - "A golden retriever stands alert in a forested area, its gaze fixed intently ahead."
+  - "A gray wolf stands alert on a snowy mountain peak, with vast ranges stretching out in the distance."
+  - "A wolf made of neon lights stands alert in a futuristic cyberpunk city, surrounded by holograms and floating cars."
+  video_length: 16
+  frame_rate: 2
+  num_inference_steps: 50
+  guidance_scale: 12.5
+  use_inv_latent: true
+  num_inv_steps: 50
+max_train_steps: 500
+updated_modules:
+  - "attn1"
+  - "attn2.to_q"
+  - "attn_temp"
+  - "swa_attn1"
+checkpointing_steps: 1000
+validation_steps: 100

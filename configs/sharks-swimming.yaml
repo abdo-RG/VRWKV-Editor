@@ -1,0 +1,26 @@
+output_dir: "./outputs/sharks-swimming"
+train_data:
+  video_path: "data/sharks-swimming.mp4"
+  prompt: "Two grey sharks swim in the blue ocean on a coral reef."
+  n_sample_frames: 16
+validation_data:
+  prompts:
+  - "Two grey sharks swim in the blue ocean on a coral reef made of stained glass"
+  - "Two quadrotor drones swim in the blue ocean on a coral reef"
+  - "Two grey sharks swim in the blue ocean near a sandy seabed"
+  - "Two cats swim in the blue ocean on a coral reef."
+  video_length: 16
+  frame_rate: 2
+  num_inference_steps: 50
+  guidance_scale: 12.5
+  use_inv_latent: true
+  num_inv_steps: 50
+max_train_steps: 1000
+updated_modules:
+  - "attn1"
+  - "attn2.to_q"
+  - "attn_temp"
+  - "s_lstm_"
+  - "out_"
+checkpointing_steps: 1000
+validation_steps: 100

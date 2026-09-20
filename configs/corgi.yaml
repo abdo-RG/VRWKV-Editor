@@ -1,0 +1,25 @@
+output_dir: "./outputs/corgi"
+train_data:
+  video_path: "data/corgi.mp4"
+  prompt: "A playful corgi dog with its mouth open and tongue out, looking excitedly at the camera."
+  n_sample_frames: 9
+validation_data:
+  prompts:
+  - "A playful corgi dog with its mouth open and tongue out, looking excitedly at the camera, rendered in a sketch style."
+  - "A playful golden retriever with its mouth open and tongue out, looking excitedly at the camera."
+  - "A playful corgi dog with its mouth open and tongue out, standing in a sunny park with children playing in the background."
+  - "A fantasy dragon with fiery eyes and smoke coming out of its nostrils, perched on top of a rocky cliff, thunderstorm behind."
+  video_length: 9
+  frame_rate: 2
+  num_inference_steps: 50
+  guidance_scale: 12.5
+  use_inv_latent: true
+  num_inv_steps: 50
+max_train_steps: 500
+updated_modules:
+  - "attn1"
+  - "attn2.to_q"
+  - "attn_temp"
+  - "swa_attn1"
+checkpointing_steps: 1000
+validation_steps: 100

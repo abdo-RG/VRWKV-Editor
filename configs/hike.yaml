@@ -1,0 +1,25 @@
+output_dir: "./outputs/hike"
+train_data:
+  video_path: "data/hike.mp4"
+  prompt: "A man with a backpack hikes on a rocky terrain, surrounded by tall, rugged mountains and scattered boulders."
+  n_sample_frames: 9
+validation_data:
+  prompts:
+  - "A man with a backpack hikes on a rocky terrain, captured in a vintage sepia tone, adding an old-world charm to the scene."
+  - "A robot with a backpack hikes on a rocky terrain, surrounded by tall, rugged mountains and scattered boulders."
+  - "A man with a backpack hikes on a lunar surface, surrounded by vast craters and the vastness of space."
+  - "An astronaut with a jetpack floats above a Martian landscape, with red rocky terrains and tall, alien-like mountains in the backdrop."
+  video_length: 9
+  frame_rate: 2
+  num_inference_steps: 50
+  guidance_scale: 12.5
+  use_inv_latent: true
+  num_inv_steps: 50
+max_train_steps: 500
+updated_modules:
+  - "attn1"
+  - "attn2.to_q"
+  - "attn_temp"
+  - "swa_attn1"
+checkpointing_steps: 1000
+validation_steps: 100

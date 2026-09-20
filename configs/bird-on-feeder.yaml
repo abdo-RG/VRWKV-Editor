@@ -1,0 +1,26 @@
+output_dir: "./outputs/bird-on-feeder"
+
+train_data:
+  video_path: "data/bird-on-feeder.mp4"
+  prompt: "A brown bird sits on a feeder that is being hung by a red string."
+  n_sample_frames: 8
+  frame_rate: 1
+validation_data:
+  prompts:
+    - "A brown bird sits on a feeder that is being hung by a red string, watercolor style."
+    - "A brown squirrel sits on a feeder that is being hung by a red string."
+    - "A brown bird sits on a feeder that is being hung by a red string on a snowy day."
+  video_length: 8
+  frame_rate: 1
+  num_inference_steps: 50
+  guidance_scale: 12.5
+  use_inv_latent: True
+  num_inv_steps: 50
+max_train_steps: 500
+updated_modules:
+  - "attn1"
+  - "attn2.to_q"
+  - "attn_temp"
+  - "swa_attn1"
+checkpointing_steps: 1000
+validation_steps: 100

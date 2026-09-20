@@ -1,0 +1,25 @@
+output_dir: "./outputs/gold-fish"
+
+train_data:
+  video_path: "data/gold-fish.mp4"
+  prompt: "Several goldfish swim in a tank."
+  n_sample_frames: 16
+validation_data:
+  prompts:
+    - "Several goldfish swim in a tank, impressionist style."
+    - "Several sharks swim in a tank."
+    - "Several goldfish swim in a pond."
+  video_length: 16
+  frame_rate: 2
+  num_inference_steps: 50
+  guidance_scale: 12.5
+  use_inv_latent: true
+  num_inv_steps: 50
+max_train_steps: 500
+updated_modules:
+  - "attn1"
+  - "attn2.to_q"
+  - "attn_temp"
+  - "swa_attn1"
+checkpointing_steps: 1000
+validation_steps: 100

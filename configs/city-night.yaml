@@ -1,0 +1,25 @@
+output_dir: "./outputs/city-night"
+train_data:
+  video_path: "data/city-night.mp4"
+  prompt: "A nighttime cityscape with bright streets and illuminated buildings"
+  n_sample_frames: 16
+validation_data:
+  prompts:
+  - "The cityscape bathed in Van Gogh's starry night with a swirl of colors over the illuminated streets"
+  - "Futuristic flying vehicles navigating above the city's vibrant, light-streaked avenues."
+  - "A cityscape with bright streets and illuminated buildings, in the daytime."
+  - "A cyberpunk metropolis with neon flora and digital wildlife under a pixelated twilight."
+  video_length: 16
+  frame_rate: 2
+  num_inference_steps: 50
+  guidance_scale: 12.5
+  use_inv_latent: true
+  num_inv_steps: 50
+max_train_steps: 500
+updated_modules:
+  - "attn1"
+  - "attn2.to_q"
+  - "attn_temp"
+  - "swa_attn1"
+checkpointing_steps: 1000
+validation_steps: 100

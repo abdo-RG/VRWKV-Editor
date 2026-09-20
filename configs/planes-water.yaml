@@ -1,0 +1,25 @@
+output_dir: "./outputs/planes-water"
+train_data:
+  video_path: "data/planes-water.mp4"
+  prompt: "A large airplane on a wet runway under a twilight sky."
+  n_sample_frames: 16
+validation_data:
+  prompts:
+  - "A large airplane on a wet runway under a twilight sky, all rendered in a somber grayscale tone."
+  - "A colossal dragon gently treads on a wet runway, wings spread wide, under a twilight sky."
+  - "A large airplane on a glistening runway made of glass, overlooking a vast cityscape at night."
+  - "A sleek spaceship lands on a runway adorned with glowing runes, set in a futuristic city during the blue hour."
+  video_length: 16
+  frame_rate: 2
+  num_inference_steps: 50
+  guidance_scale: 12.5
+  use_inv_latent: true
+  num_inv_steps: 50
+max_train_steps: 500
+updated_modules:
+  - "attn1"
+  - "attn2.to_q"
+  - "attn_temp"
+  - "swa_attn1"
+checkpointing_steps: 1000
+validation_steps: 100

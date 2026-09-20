@@ -1,0 +1,25 @@
+output_dir: "./outputs/car-turn"
+train_data:
+  video_path: "data/car-turn.mp4"
+  prompt: "a jeep car is moving on the road"
+  n_sample_frames: 16
+validation_data:
+  prompts:
+  - "a jeep car is moving on the beach"
+  - "a jeep car is moving on the snow"
+  - "a jeep car is moving on the road, cartoon style"
+  - "a sports car is moving on the road"
+  video_length: 16
+  frame_rate: 1
+  num_inference_steps: 50
+  guidance_scale: 12.5
+  use_inv_latent: true
+  num_inv_steps: 50
+max_train_steps: 500
+updated_modules:
+  - "attn1"
+  - "attn2.to_q"
+  - "attn_temp"
+  - "swa_attn1"
+checkpointing_steps: 1000
+validation_steps: 100

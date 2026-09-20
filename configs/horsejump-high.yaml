@@ -1,0 +1,25 @@
+output_dir: "./outputs/horsejump-high"
+train_data:
+  video_path: "data/horsejump-high.mp4"
+  prompt: "A rider on a horse jumping over an obstacle in an equestrian competition with a clear sky and other obstacles in the background."
+  n_sample_frames: 16
+validation_data:
+  prompts:
+  - "A rider on a horse jumping over an obstacle in an equestrian competition, rendered in Van Gogh style with swirling skies and vibrant colors."
+  - "A knight in shining armor on a unicorn jumping over an obstacle in a magical realm."
+  - "A rider on a horse jumping over an obstacle with a backdrop of a vast, tranquil ocean under a sunset."
+  - "A medieval knight on a dragon jumping over a floating obstacle, set against a backdrop of a futuristic city skyline."
+  video_length: 16
+  frame_rate: 1
+  num_inference_steps: 50
+  guidance_scale: 12.5
+  use_inv_latent: true
+  num_inv_steps: 50
+max_train_steps: 500
+updated_modules:
+  - "attn1"
+  - "attn2.to_q"
+  - "attn_temp"
+  - "swa_attn1"
+checkpointing_steps: 1000
+validation_steps: 100

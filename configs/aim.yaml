@@ -1,0 +1,28 @@
+output_dir: "./outputs/aim5"
+train_data:
+  video_path: "data/1014.mp4"
+  prompt: "Dome building of AI Movement."
+  n_sample_frames: 16
+validation_data:
+  prompts:
+  - "Dome building of AI Movement under the snow."
+  - "Dome building of AI Movement, Van Gogh style."
+  - "Dome building of AI Movement, Van Gogh style in background."
+  - "Dome building of AI Movement in New York City."
+  video_length: 16
+  width: 512
+  height: 512
+  frame_rate: 1
+  num_inference_steps: 50
+  guidance_scale: 12.5
+  use_inv_latent: true
+  num_inv_steps: 50
+max_train_steps: 500
+updated_modules:
+  - "attn1.to_q"
+  - "attn2.to_q"
+  - "attn_temp"
+  - "s_lstm_"
+  - "out_"
+checkpointing_steps: 1000
+validation_steps: 50

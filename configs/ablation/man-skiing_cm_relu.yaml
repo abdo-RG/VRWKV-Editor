@@ -1,0 +1,28 @@
+output_dir: outputs/ablation/man-skiing_cm_relu
+train_data:
+  video_path: data/man-skiing.mp4
+  prompt: a man is skiing
+  n_sample_frames: 16
+validation_data:
+  prompts:
+  - mickey mouse is skiing on the snow
+  - spider man is skiing on the beach, cartoon style
+  - wonder woman, wearing a cowboy hat, is skiing
+  - a man, wearing pink clothes, is skiing at sunset
+  video_length: 16
+  frame_rate: 2
+  num_inference_steps: 50
+  guidance_scale: 12.5
+  use_inv_latent: true
+  num_inv_steps: 50
+max_train_steps: 500
+updated_modules:
+  - "attn1"
+  - "attn2.to_q"
+  - "attn_temp"
+  - "swa_attn1"
+  - "channel_mix"
+checkpointing_steps: 1000
+validation_steps: 500
+use_channel_mix: true
+channelmix_act: relu

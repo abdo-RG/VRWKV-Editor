@@ -1,0 +1,28 @@
+output_dir: "./outputs/Bear-eating"
+train_data:
+  video_path: "data/Bear-eating.mp4"
+  prompt: "a large brown bear eating salmon in the creek."
+  n_sample_frames: 16
+validation_data:
+  prompts:
+  - "a large brown bear eating salmon on the snow."
+  - "a tiger is eating salmon in the creek."
+  - "a large brown bear eating watermelon on desert."
+  - "a man is eating salmon in the creek."
+  video_length: 16
+  width: 512
+  height: 512
+  frame_rate: 1
+  num_inference_steps: 50
+  guidance_scale: 12.5
+  use_inv_latent: true
+  num_inv_steps: 50
+max_train_steps: 500
+updated_modules:
+  - "attn1.to_q"
+  - "attn2.to_q"
+  - "attn_temp"
+  - "s_lstm_"
+  - "out_"
+checkpointing_steps: 1000
+validation_steps: 100

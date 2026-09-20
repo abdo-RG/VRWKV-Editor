@@ -1,0 +1,25 @@
+output_dir: "./outputs/cat-in-the-sun"
+train_data:
+  video_path: "data/cat-in-the-sun.mp4"
+  prompt: "A cat in the grass in the sun."
+  n_sample_frames: 16
+validation_data:
+  prompts:
+  - "A dog in the grass in the sun."
+  - "A red lion in the grass in the sun, surrounded by butterflies."
+  video_length: 16
+  width: 512
+  height: 512
+  frame_rate: 2
+  num_inference_steps: 50
+  guidance_scale: 12.5
+  use_inv_latent: true
+  num_inv_steps: 50
+max_train_steps: 500
+updated_modules:
+  - "attn1.to_q"
+  - "attn2.to_q"
+  - "attn_temp"
+  - "swa_attn1"
+checkpointing_steps: 1000
+validation_steps: 100

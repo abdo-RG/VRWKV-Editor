@@ -1,0 +1,25 @@
+output_dir: "./outputs/yacht"
+train_data:
+  video_path: "data/yacht.mp4"
+  prompt: "A cruise ship sailing through the ocean with a city skyline in the background"
+  n_sample_frames: 16
+validation_data:
+  prompts:
+  - "A cruise ship sailing through the ocean with a city skyline in the background, in Studio Ghibli style"
+  - "An ancient galleon navigating through the ocean with a city skyline in the background"
+  - "A cruise ship sailing through the crystalline waters of an arctic landscape dotted with icebergs"
+  - "A space cruiser modeled after a cruise ship gliding through the cosmos with a nebula illuminating the background"
+  video_length: 16
+  frame_rate: 2
+  num_inference_steps: 50
+  guidance_scale: 12.5
+  use_inv_latent: true
+  num_inv_steps: 50
+max_train_steps: 500
+updated_modules:
+  - "attn1"
+  - "attn2.to_q"
+  - "attn_temp"
+  - "swa_attn1"
+checkpointing_steps: 1000
+validation_steps: 100

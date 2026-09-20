@@ -1,0 +1,26 @@
+output_dir: "./outputs/blackswan"
+train_data:
+  video_path: "data/blackswan.mp4"
+  prompt: "A black swan swimming in a pond with lush greenery in the background."
+  n_sample_frames: 16
+validation_data:
+  prompts:
+  - "A black swan swimming in a pond with lush greenery in the background, oil painting style."
+  - "A black swan swimming in a crystal clear lake surrounded by snow-capped mountains."
+  - "A duck made of origami floating on a pond under a cherry blossom tree in full bloom."
+  - "A majestic flamingo swimming in a pond with lush greenery in the background."
+  video_length: 16
+  frame_rate: 2
+  num_inference_steps: 50
+  guidance_scale: 12.5
+  use_inv_latent: true
+  num_inv_steps: 50
+max_train_steps: 1000
+updated_modules:
+  - "attn1"
+  - "attn2.to_q"
+  - "attn_temp"
+  - "s_lstm_"
+  - "out_"
+checkpointing_steps: 1000
+validation_steps: 100

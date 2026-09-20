@@ -1,0 +1,25 @@
+output_dir: "./outputs/drift-turn"
+train_data:
+  video_path: "data/drift-turn.mp4"
+  prompt: "A race car performing a drift turn on a track."
+  n_sample_frames: 9
+validation_data:
+  prompts:
+  - "A race car drifting on a track in a grainy, high-contrast black and white film style."
+  - "A futuristic hovercar performing a drift turn in an urban racing circuit."
+  - "A race car drifting on a moon crater surface with the Earth visible in the sky."
+  - "A neon-lit supercar sliding around a turn on a cyberpunk-style, rain-slicked neon street at night."
+  video_length: 9
+  frame_rate: 2
+  num_inference_steps: 50
+  guidance_scale: 12.5
+  use_inv_latent: true
+  num_inv_steps: 50
+max_train_steps: 500
+updated_modules:
+  - "attn1"
+  - "attn2.to_q"
+  - "attn_temp"
+  - "swa_attn1"
+checkpointing_steps: 1000
+validation_steps: 100

@@ -1,0 +1,25 @@
+output_dir: "./outputs/swing-fog"
+train_data:
+  video_path: "data/swing-fog.mp4"
+  prompt: "An empty swing hanging from chains, with fog obscuring trees in the background."
+  n_sample_frames: 16
+validation_data:
+  prompts:
+  - "An empty swing hanging from chains, with fog obscuring trees in the background, Gothic Animation style."
+  - "A vintage wooden bench hanging from flower-laden vines, with fog obscuring trees in the background."
+  - "An empty swing hanging from chains in front of an ancient castle partially shrouded in mist."
+  - "A luminous moonlit jellyfish floating mid-air, with an enchanted forest cloaked in a mystical fog in the background."
+  video_length: 16
+  frame_rate: 2
+  num_inference_steps: 50
+  guidance_scale: 12.5
+  use_inv_latent: true
+  num_inv_steps: 50
+max_train_steps: 500
+updated_modules:
+  - "attn1"
+  - "attn2.to_q"
+  - "attn_temp"
+  - "swa_attn1"
+checkpointing_steps: 1000
+validation_steps: 100

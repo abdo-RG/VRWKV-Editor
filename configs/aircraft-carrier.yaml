@@ -1,0 +1,25 @@
+output_dir: "./outputs/aircraft-carrier"
+train_data:
+  video_path: "data/aircraft-carrier.mp4"
+  prompt: "An aircraft carrier moored at the dock with various planes on its deck."
+  n_sample_frames: 16
+validation_data:
+  prompts:
+  - "An aircraft carrier at the dock with planes on its deck, presented in a grayscale wartime documentary style."
+  - "A luxury cruise ship docked at the harbor with vacationers enjoying the sun on the decks."
+  - "The aircraft carrier moored in a frozen arctic setting with icebergs in the background."
+  - "A spaceship modeled after an aircraft carrier floating in outer space with futuristic fighters on its runway."
+  video_length: 16
+  frame_rate: 2
+  num_inference_steps: 50
+  guidance_scale: 12.5
+  use_inv_latent: true
+  num_inv_steps: 50
+max_train_steps: 500
+updated_modules:
+  - "attn1"
+  - "attn2.to_q"
+  - "attn_temp"
+  - "swa_attn1"
+checkpointing_steps: 1000
+validation_steps: 100
