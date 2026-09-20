@@ -8,11 +8,11 @@ quadratic spatio-temporal attention of diffusion-based editors with a **linear**
 built on top of a Tune-A-Video-style pipeline with a Stable Diffusion v1.4
 backbone, and reduces the memory and runtime of the spatial-aggregation module by
 up to **~72% vs. Swin attention** and **~96% vs. sparse-causal attention**, with
-the gap widening at longer sequences and higher resolutions — while preserving
+the gap widening at longer sequences and higher resolutions, while preserving
 temporal consistency and text alignment.
 
 Paper: *VRWKV-Editor: Reducing Quadratic Complexity in Transformer-Based Video
-Editing* — project page: https://abdo-rg.github.io/VRWKV-Editor/
+Editing* project page: https://abdo-rg.github.io/VRWKV-Editor/
 
 ---
 
@@ -25,10 +25,10 @@ change, style transfer) while preserving the source motion.
 The core is the **3D-VRWKV module**, an alternative for spatio-temporal
 attention with two linear-complexity sub-modules:
 
-1. **Spatio-temporal mixing** — quad-directional token shift + a learnable
+1. **Spatio-temporal mixing:** quad-directional token shift + a learnable
    channel-wise temporal interpolation (μ) followed by bidirectional Bi-WKV
    aggregation.
-2. **Channel mixing** — a second learnable interpolation (μ_c) plus a squared-ReLU
+2. **Channel mixing:** a second learnable interpolation (μ_c) plus a squared-ReLU
    gate for cross-channel communication.
 
 Both μ and μ_c are learned per channel and adaptively control temporal smoothness.
