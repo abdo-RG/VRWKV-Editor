@@ -53,7 +53,7 @@ repo/
 ## Installation
 
 ```bash
-conda create -n 3vdrwkv python=3.10 -y
+conda create -n 3dvrwkv python=3.10 -y
 conda activate 3dvrwkv
 pip install -r requirements.txt
 ```
